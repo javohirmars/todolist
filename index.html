@@ -1,44 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>To Do</title>
 </head>
-<body>
-    <header>
-        
-    </header>
-    
-    <main>
-        <section id="todo" class="container-fluid text-center text-white bg-danger">
-            <h2>To Do</h2>
-            
-            <form id="inputform" class="input-group px-5 mb-3" action="https://echo.htmlacademy.ru/" method="post" >
-                <input type="text" class="form-control" placeholder="Add a Todo" id="userinput">
-                <button class="btn btn-success" type="submit" id="btn">Add</button>
-            </form>
-            
-            <div class="row p-5">
-                <div class="col-4"></div>
-                <div class="col-4 form-check bg-white text-black px-5 py-3 rounded">
-                    <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something">
-                    <label class="form-check-label">Todo</label>
-                    <button class="" type="button">X</button>
-                </div>
-                <div class="col-4"></div>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        
-    </footer>
-    
-    <script src="./js/bootstrap.js"></script>
-    <script src="./js/main.js"></script>
-    </body>
-    </html>
+<body class="bg-dark p-5">
+  <header>
+    <h1 class="visually-hidden">Incredible To Do list</h1>
+  </header>
+
+  <main>
+    <section id="todo" class="text-center mx-5 px-5">
+      <h2 class="text-white mb-3">TO DO</h2>
+
+      <div class="mx-5 px-5">
+        <form class="input-group px-5" action="https://echo.htmlacademy.ru/" method="post" id="input-form">
+          <input type="text" class="form-control px-4" placeholder="type..." id="userinput" required>
+
+          <div class="btn-group">
+            <button class="btn btn-success px-5" type="submit" id="btn-add">
+              Add
+            </button>
+
+            <button class="btn btn-danger px-5" type="button" id="btn-clean">
+              Clean
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="row m-3 mx-5">
+        <div class="col-3"></div>
+        <div class="col-6 px-5 py-3">
+          <ul class="list-group" id="toDoList">
+
+          </ul>
+        </div>
+        <div class="col-3"></div>
+
+        <div class="todo-sort mt-4">
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" class="btn btn-primary px-4" id="btn-all">
+              All <span class="h6 count-1">0</span>
+            </button>
+
+            <button type="button" class="btn btn-success" id="btn-completed">
+              Completed <span class="h6 count-2">0</span>
+            </button>
+
+            <button type="button" class="btn btn-danger" id="btn-uncompleted">
+              Uncompleted <span class="h6 count-3">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <template id="todo-item-template">
+    <li class="list-group-item d-flex justify-content-between align-items-center p-0">
+      <input class="form-check-input ms-3 checkbox-todo" type="checkbox">
+
+      <span class="todo-text">Todo</span>
+
+      <button class="btn-sm btn-danger btn-del" type="button">Delete</button>
+    </li>
+  </template>
+
+
+  <script src="./js/bootstrap.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.form-check-input {
+  opacity: 0.3;
+}
+.form-check-input:hover {
+  opacity: 1;
+}
+.form-check-input:checked + .todo-text {
+  text-decoration: line-through;
+}
